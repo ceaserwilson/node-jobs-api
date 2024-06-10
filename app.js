@@ -38,6 +38,10 @@ app.use(express.json())
 app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/jobs', authenticateUser, jobsRouter)
 
+app.get('/', (req, res) => {
+  res.send(`<h2>welcome to jobs API</h2>`)
+})
+
 app.use(notFoundMiddleware)
 app.use(errorHandlerMiddleware)
 
